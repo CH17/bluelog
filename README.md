@@ -4,7 +4,7 @@ BlueLog is a logging package for Laravel that allows you to log messages with co
 
 ## Features
 
-- Log messages with various levels (debug, info, warning, error, etc.)
+- Log messages with various levels (debug, info, warning, error etc.)
 - Log to both files and a database
 - Store context and extra information with logs
 - Use millisecond precision for timestamps
@@ -16,14 +16,14 @@ BlueLog is a logging package for Laravel that allows you to log messages with co
 1. **Require the package via Composer:**
 
    ```bash
-   composer require yourvendor/bluelog
+   composer require ch17/bluelog
    ```
 
 2. **Publish the configuration file and migration:**
 
    ```bash
-   php artisan vendor:publish --provider="YourVendor\BlueLog\BlueLogServiceProvider" --tag="config"
-   php artisan vendor:publish --provider="YourVendor\BlueLog\BlueLogServiceProvider" --tag="migrations"
+   php artisan vendor:publish --provider="Ch17\BlueLog\BlueLogServiceProvider" --tag="config"
+   php artisan vendor:publish --provider="Ch17\BlueLog\BlueLogServiceProvider" --tag="migrations"
    ```
 
 3. **Run the migrations:**

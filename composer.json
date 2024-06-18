@@ -1,19 +1,19 @@
 {
-    "name": "ch17/blue-logs",
-    "description": "Laravel logs to database",
-    "authors": [
-        {
-            "name": "ch17",
-            "email": "contact.choyon@gmail.com"
-        }
-    ],
-    "type": "library",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Ch17\\BlueLogs\\": "src/"
-        }
-    },
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "ch17/blue-log",
+  "description": "Laravel log to database",
+  "authors": [
+    {
+      "name": "ch17",
+      "email": "contact.choyon@gmail.com"
+    }
+  ],
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Ch17\\BlueLog\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {}
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ch17\BlueLogs\Console;
+namespace Ch17\BlueLog\Console;
 
 use Illuminate\Console\Command;
-use Ch17\BlueLogs\Models\Log;
+use Ch17\BlueLog\Models\Log;
 
-class BlueLogCommand extends Command
+class ClearBlueLogCommand extends Command
 {
     protected $signature = 'log:add {level} {message}';
     protected $description = 'Add a log entry to the logs table';

@@ -10,9 +10,13 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->string('level');
+            $table->string('channel')->default('default');
+            $table->unsignedInteger('level');
+            $table->string('level_name');
             $table->text('message');
-            $table->timestamps();
+            $table->json('context')->nullable();
+            $table->json('extras')->nullable();
+            $table->timestamp('created_at', 3)->nullable();
         });
     }
 

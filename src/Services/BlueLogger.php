@@ -28,6 +28,7 @@ class BlueLogger
                 'message' => $message,
                 'context' => $context,
                 'extras' => $extras,
+                'user' => $this->getLoggedInUser(),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s.u'),
             ]);
         }
@@ -67,5 +68,18 @@ class BlueLogger
     public function error($channel, $message, array $context = [], array $extras = [])
     {
         $this->log($channel, 'error', $message, $context, $extras);
+    }
+
+    private function getLoggedInUser(){
+
+        if (auth()->check()) {
+        $user = auth()->user();
+            return [
+                'name' => $user->name,
+                'email' => $user->email,
+            ];
+        }
+
+        return null;
     }
 }

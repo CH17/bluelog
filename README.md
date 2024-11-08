@@ -16,7 +16,7 @@ BlueLog is a logging package for Laravel that allows you to log messages with co
 1. **Require the package via Composer:**
 
    ```bash
-   composer require ch17/bluelog
+   composer require ch17/blue-log:dev-main
    ```
 
 2. **Publish the configuration file and migration:**

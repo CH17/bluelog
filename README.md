@@ -51,12 +51,30 @@ To use BlueLog, you can either call the logging methods directly on the `BlueLog
 BlueLog provides methods for each logging level:
 
 ```php
-use BlueLog;
+use Ch17\BlueLog\Facades\Log;
 
 BlueLog::debug('default', 'This is a debug message', ['context' => 'value'], ['extra' => 'value']);
 BlueLog::info('default', 'This is an info message', ['context' => 'value'], ['extra' => 'value']);
 BlueLog::warning('default', 'This is a warning message', ['context' => 'value'], ['extra' => 'value']);
 BlueLog::error('default', 'This is an error message', ['context' => 'value'], ['extra' => 'value']);
+```
+
+```php
+use Ch17\BlueLog\Services\BlueLogger as logger;
+
+   protected $logger;
+
+    public function __construct(BlueLogger $logger)
+    {
+        $this->logger = $logger;
+    }
+```
+
+```php
+$this->logger->debug('default', 'This is a debug message', ['context' => 'value'], ['extra' => 'value']);
+$this->logger->info('default', 'This is an info message', ['context' => 'value'], ['extra' => 'value']);
+$this->logger->warning('default', 'This is a warning message', ['context' => 'value'], ['extra' => 'value']);
+$this->logger->error('default', 'This is an error message', ['context' => 'value'], ['extra' => 'value']);
 ```
 
 ### Custom Logging

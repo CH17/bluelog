@@ -14,6 +14,16 @@
       "Ch17\\BlueLog\\": "src/"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ch17\\BlueLog\\BlueLogServiceProvider"
+      ],
+      "aliases": {
+        "BlueLog": "Ch17\\BlueLog\\Facades\\Log"
+      }
+    }
+  },
   "minimum-stability": "stable",
   "require": {}
 }

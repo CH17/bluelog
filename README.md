@@ -16,14 +16,13 @@ BlueLog is a logging package for Laravel that allows you to log messages with co
 1. **Require the package via Composer:**
 
    ```bash
-   composer require ch17/blue-log:dev-main
+   composer require ch17/blue-log
    ```
 
 2. **Publish the configuration file and migration:**
 
    ```bash
-   php artisan vendor:publish --provider="Ch17\BlueLog\BlueLogServiceProvider" --tag="config"
-   php artisan vendor:publish --provider="Ch17\BlueLog\BlueLogServiceProvider" --tag="migrations"
+   php artisan vendor:publish --tag=blue-log-migrations
    ```
 
 3. **Run the migrations:**
@@ -32,7 +31,7 @@ BlueLog is a logging package for Laravel that allows you to log messages with co
    php artisan migrate
    ```
 
-## Configuration
+## Configuration [upcoming]
 
 BlueLog's configuration file is located at `config/bluelog.php`. You can customize the default log level and other settings in this file.
 

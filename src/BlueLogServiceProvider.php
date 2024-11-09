@@ -14,7 +14,7 @@ class BlueLogServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/database/migrations' => database_path('migrations'),
-        ], 'migrations');
+        ], 'blue-log-migrations');
 
          if ($this->app->runningInConsole()) {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();

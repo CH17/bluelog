@@ -2,7 +2,7 @@
 
 namespace Ch17\BlueLog;
 
-use Ch17\BlueLog\Console\ClearBlueLogCommand;
+use Ch17\BlueLog\Console\PurgeLogsCommand;
 use Ch17\BlueLog\Services\BlueLogger;
 use Illuminate\Support\ServiceProvider;
 
@@ -10,15 +10,17 @@ class BlueLogServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
-
         $this->publishes([
             __DIR__.'/Database/Migrations' => database_path('migrations'),
         ], 'blue-log-migrations');
 
-         if ($this->app->runningInConsole()) {
+        $this->publishes([
+            __DIR__.'/Config/bluelog.php' => config_path('bluelog.php'),
+        ], 'blue-log-config');
+
+        if ($this->app->runningInConsole()) {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('BlueLog', \Ch17\BlueLog\Facades\Log::class);
+            $loader->alias('BlueLog', \Ch17\BlueLog\Facades\BlueLog::class);
         }
     }
 
@@ -28,6 +30,6 @@ class BlueLogServiceProvider extends ServiceProvider
             return new BlueLogger();
         });
 
-        $this->commands([ClearBlueLogCommand::class]);
+        $this->commands([PurgeLogsCommand::class]);
     }
 }

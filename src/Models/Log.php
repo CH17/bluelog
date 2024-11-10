@@ -13,14 +13,14 @@ class Log extends Model
         'message',
         'context',
         'extras',
-        'user',
+        'created_by',
         'created_at',
     ];
 
     protected $casts = [
         'context' => 'array',
         'extras' => 'array',
-        'user' => 'json',
+        'created_by' => 'json',
         'created_at' => 'datetime:Y-m-d H:i:s.u',
     ];
 

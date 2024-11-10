@@ -16,7 +16,7 @@ class CreateLogsTable extends Migration
             $table->text('message');
             $table->json('context')->nullable();
             $table->json('extras')->nullable();
-            $table->json('user')->nullable();
+            $table->json('created_by')->nullable();
             $table->timestamp('created_at', 3)->nullable();
         });
     }

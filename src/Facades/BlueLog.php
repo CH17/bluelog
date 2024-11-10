@@ -4,7 +4,7 @@ namespace  Ch17\BlueLog\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Log extends Facade
+class BlueLog extends Facade
 {
     protected static function getFacadeAccessor()
     {
